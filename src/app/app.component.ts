@@ -13,8 +13,11 @@ export class AppComponent {
 
   @ViewChild('theDiv')
   theDiv: ElementRef;
+  private captureService: NgxCaptureService;
 
-  constructor(private captureService: NgxCaptureService) {}
+  constructor() {
+    this.captureService = new NgxCaptureService();
+  }
 
   exportToImage(event) {
     // this.exportUsingHtmlToImage();
